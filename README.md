@@ -1,4 +1,4 @@
-# Java-Neural-Network
+# Neural-Network-Java
 A basic implementation of a Neural Network and trainer for 
 Xor and [MNIST digit recognition](http://yann.lecun.com/exdb/mnist/)  in Java.
 
