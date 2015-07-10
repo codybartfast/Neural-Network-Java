@@ -18,10 +18,20 @@ public class Network {
     
     
 	public Network(int inputSize, int[] hiddenSizes, int outputSize, double learnRate){
-		this(Activation.Sigmoid, new TrainingInfo(learnRate), inputSize, hiddenSizes, outputSize)
+		this(Activation.getSigmoid(), new TrainingInfo(learnRate), inputSize, hiddenSizes, outputSize);
 	}
 	
     public Network(Activation activation, TrainingInfo trainInfo, int inputSize, int[] hiddenSizes, int outputSize)
     {
-    }
+        this.inputSize = inputSize;
+        this.hiddenSizes = hiddenSizes;
+        this.outputSize = outputSize;
+
+        this.activation = activation;
+        this.inputLayer = new InputLayer(inputSize);
+        this.hiddenLayers = hiddenSizes
+            .Select(size => new HiddenLayer(activation, trainInfo, size))
+            .ToArray();
+        this.outputLayer = new OutputLayer(activation, trainInfo, outputSize);
+        ConnectLayers();    }
 }
