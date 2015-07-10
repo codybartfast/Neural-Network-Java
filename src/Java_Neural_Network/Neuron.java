@@ -1,5 +1,8 @@
 package Java_Neural_Network;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Neuron {
 	
     protected Activation activation;
@@ -11,38 +14,40 @@ public abstract class Neuron {
         this.trainInfo = trainInfo;
     }
 
-    protected List<Connection> inboundConnections = new List<Connection>();
+    protected List<Connection> inboundConnections = new ArrayList<Connection>();
     public void AddInboundConnection(Connection connection)
-    {
-        inboundConnections.Add(connection);
+    {    	
+        inboundConnections.add(connection);
     }
 
-
-    readonly protected List<Connection> outboundConnections = new List<Connection>();
+    protected List<Connection> outboundConnections = new ArrayList<Connection>();
     public void AddOutboundConnection(Connection connection)
     {
-        outboundConnections.Add(connection);
+        outboundConnections.add(connection);
     }
-    public double Value { get; protected set; }
+    
+    double value;
+    public double getValue() { return value; }
 
-    public double Error { get; protected set; }
+    double error;
+    public double getError() { return error; }
 
-    public virtual void FeedForward()
+    public void FeedForward()
     {
         double sum = 0;
-        foreach (var conn in inboundConnections)
-            sum += conn.WeightedValue;
-        Value = activation.CalcValue(sum);
+        for  (Connection conn : inboundConnections)
+            sum += conn.getWeightedValue();
+        value = activation.CalcValue(sum);
     }
 
-    public virtual void PropagateBack()
+    public void PropagateBack() throws Exception
     {
-        var valueDelta = CalcValueDelta();
-        Error = valueDelta * activation.CalcDerivative(Value);
+        double valueDelta = CalcValueDelta();
+        error = valueDelta * activation.CalcDerivative(value);
 
-        foreach (var conn in inboundConnections)
-            conn.PropagateBack(trainInfo.LearnRate, Error);
+        for (Connection conn : inboundConnections)
+            conn.propagateBack(trainInfo.getLearnRate(), error);
     }
 
-    abstract protected double CalcValueDelta();
+    abstract protected double CalcValueDelta() throws Exception;
 }

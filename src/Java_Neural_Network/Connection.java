@@ -19,17 +19,17 @@ public class Connection {
 
     public double getWeightedValue()
     {
-         return from.Value *  weight; 
+         return from.getValue() *  weight; 
     }
 
     double weightedError;
     public double getWeightedError() { return weightedError; }
 
-    public void PropagateBack(double learnRate, double error)
+    public void propagateBack(double learnRate, double error)
     {
         weightedError = error * weight; 
 
-        double weightDelta = learnRate * error * from.Value;
+        double weightDelta = learnRate * error * from.getValue();
         weight += weightDelta;
     }
 
