@@ -6,12 +6,14 @@ public class ValueNeuron extends Neuron {
     	super(null, null); 
     }
 
-    public void FeedForward()
+    @Override
+    public void feedForward()
     {
         // do nothing
     }
 
-    public void PropagateBack()
+    @Override
+    public void propagateBack()
     {
         // do nothing
     }
@@ -21,10 +23,11 @@ public class ValueNeuron extends Neuron {
         super.value = value;
     }
 
-
-    protected double CalcValueDelta() throws Exception 
+    @Override
+    protected double calcValueDelta()  
     {
-        throw new Exception("Don't expect CalcValueDelta to be called on a Value neuron because PropagateBack does nothing");
+    	assert false; // "Don't expect CalcValueDelta to be called on a Value neuron because PropagateBack does nothing"
+        return 0;
     }
 	
 }

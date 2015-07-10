@@ -5,8 +5,8 @@ import java.util.List;
 
 public abstract class Neuron {
 	
-    protected Activation activation;
-    protected TrainingInfo trainInfo;
+    final protected Activation activation;
+    final protected TrainingInfo trainInfo;
     
     public Neuron(Activation activation, TrainingInfo trainInfo)
     {
@@ -15,13 +15,13 @@ public abstract class Neuron {
     }
 
     protected List<Connection> inboundConnections = new ArrayList<Connection>();
-    public void AddInboundConnection(Connection connection)
+    public void addInboundConnection(Connection connection)
     {    	
         inboundConnections.add(connection);
     }
 
     protected List<Connection> outboundConnections = new ArrayList<Connection>();
-    public void AddOutboundConnection(Connection connection)
+    public void addOutboundConnection(Connection connection)
     {
         outboundConnections.add(connection);
     }
@@ -32,7 +32,7 @@ public abstract class Neuron {
     double error;
     public double getError() { return error; }
 
-    public void FeedForward()
+    public void feedForward()
     {
         double sum = 0;
         for  (Connection conn : inboundConnections)
@@ -40,14 +40,14 @@ public abstract class Neuron {
         value = activation.CalcValue(sum);
     }
 
-    public void PropagateBack() throws Exception
+    public void propagateBack()
     {
-        double valueDelta = CalcValueDelta();
+        double valueDelta = calcValueDelta();
         error = valueDelta * activation.CalcDerivative(value);
 
         for (Connection conn : inboundConnections)
             conn.propagateBack(trainInfo.getLearnRate(), error);
     }
 
-    abstract protected double CalcValueDelta() throws Exception;
+    abstract protected double calcValueDelta();
 }

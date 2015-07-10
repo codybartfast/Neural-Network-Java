@@ -7,9 +7,10 @@ public class BiasNeuron extends ValueNeuron {
 	    super.SetValue(1);
 	}
 	
+	@Override
 	public void SetValue(double value)
 	{
-	    // do nothing
+	    assert false; // this should never be called for a BiasNeuron
 	}
 
 }

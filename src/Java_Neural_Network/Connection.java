@@ -2,16 +2,16 @@ package Java_Neural_Network;
 
 public class Connection {
 
-    Neuron from;
-    Neuron to;
+    final Neuron from;
+    final Neuron to;
     double weight;
 
     public Connection(Neuron from, Neuron to, double weight)
     {
-        from.AddOutboundConnection(this);
+        from.addOutboundConnection(this);
         this.from = from;
 
-        to.AddInboundConnection(this);
+        to.addInboundConnection(this);
         this.to = to;
 
         this.weight = weight;
