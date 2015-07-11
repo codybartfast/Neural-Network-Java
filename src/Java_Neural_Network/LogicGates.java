@@ -8,8 +8,8 @@ public class LogicGates {
 		
         UI.writeLine("Training Not:");
         UI.writeLine("=============");
-        Network net = new Network(1, new int[0], 1, learnRate);
-        new Trainer(net, LogicCases.notCases, check, null).trainUntilDone();
+        Network net11 = new Network(1, new int[0], 1, learnRate);
+        new Trainer(net11, LogicCases.notCases, check, null).trainUntilDone();
         
         UI.writeLine("Training Or:");
         UI.writeLine("============");
@@ -28,7 +28,8 @@ public class LogicGates {
 
         UI.writeLine("Training Xor:");
         UI.writeLine("=============");
-        new Trainer(create21Network(learnRate), LogicCases.xorCases, check, null)
+        Network net221 = new Network(2, new int[]{4}, 1, learnRate);
+        new Trainer(net221, LogicCases.xorCases, check, null)
         	.trainUntilDone();
 	}
 	

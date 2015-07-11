@@ -47,7 +47,7 @@ public class Trainer {
 	
 	public void trainUntilDone(boolean showEpochStats){
         long start = System.currentTimeMillis();
-        wr("Got {0:n0} training cases and {1:n0} test cases", caseCount, testCases.length);
+        wr("Got %d training cases and %d test cases", caseCount, testCases.length);
         Tuple trainingAccuracy = measureAccuracy(cases);
         Tuple testAccuracy = measureAccuracy(testCases);
         writeAccuracy(trainingAccuracy, "Training");
@@ -64,14 +64,14 @@ public class Trainer {
             trainingAccuracy = measureAccuracy(cases);
             if (showEpochStats || trainingAccuracy.item1 == trainingAccuracy.item2)
             {
-                wr("Epoch {0} complete:", epochCount);
+                wr("Epoch %d complete:", epochCount);
                 testAccuracy = measureAccuracy(testCases);
                 writeAccuracy(trainingAccuracy, "Training");
                 writeAccuracy(testAccuracy, "    Test");
-                wr("Training time: {0:mm\\:ss}", (trainingEnd - trainingStart));
+                wr("Training time: %.3fs", (trainingEnd - trainingStart)/1000f);
                 long now = System.currentTimeMillis();
-                wr("   Epoch time: {0:mm\\:ss}", (now - epochStart));
-                wr("     Run time: {0:mm\\:ss}", (now - start));
+                wr("   Epoch time: %.3fs", (now - epochStart)/1000f);
+                wr("     Run time: %.3fs", (now - start)/1000f);
                 wr("================================");
             }
         }
