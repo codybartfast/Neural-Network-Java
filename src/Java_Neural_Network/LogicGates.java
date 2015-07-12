@@ -1,3 +1,8 @@
+/*
+ *   Creates and trains neural networks to perform the 
+ *   function of elemental Logic Gates.
+ */
+
 package Java_Neural_Network;
 
 public class LogicGates {

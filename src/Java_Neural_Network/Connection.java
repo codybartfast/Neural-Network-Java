@@ -1,3 +1,14 @@
+/*
+ *   Represents a connection between a neuron ('from') in one layer 
+ *   and a neuron ('to') the next layer.
+ *   
+ *   It maintains a 'weight' value that decides the influence of the 
+ *   'from' neuron the 'to' neuron.
+ *   
+ *   It provides Weighted Value when feeding forward (evaluating) and
+ *   updates it's weight during BackPropogation (training).
+ */
+
 package Java_Neural_Network;
 
 public class Connection {

@@ -1,3 +1,18 @@
+/*
+ *   Represents a neuron with a neural network. It provides
+ *   the core functions "feedForward" for evaluation and 
+ *   "propagateBack" for training.  It maintains the value
+ *   of the last calculated value and last calculated error.
+ *   
+ *   'Delta' is the difference between expected and actual
+ *   values.
+ *   
+ *   'Error' is a calculated term dependent on the
+ *   activation function and is used to determine
+ *   the adjustments to the weights given to the values
+ *   in the previous layers.
+ */
+
 package Java_Neural_Network;
 
 import java.util.ArrayList;

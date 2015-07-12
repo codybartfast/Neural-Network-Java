@@ -1,3 +1,18 @@
+/*
+ *   Represents the Output layer of a neural network. 
+ *   
+ *   Contains Output Neurons.
+ *   
+ *   Provides a GetValues function for represents output of
+ *   the Neural network.
+ *   
+ *   Provides a SetTargetValues function to set the expected
+ *   out put of the network for a given input. These values 
+ *   can then be used by back propagation (training)
+ *   process to train the network.
+ * 
+ */
+
 package Java_Neural_Network;
 
 public class OutputLayer extends Layer{

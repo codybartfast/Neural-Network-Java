@@ -1,3 +1,12 @@
+/*
+ *   Represents the Hidden Layer of a neural network 
+ *   and contains 1 or more Hidden Neurons and a Bias
+ *   neuron.
+ *   
+ *   FeedForward (evaluation) and BackPropagation (training)
+ *   functions are provided by the Layer class.
+ */
+
 package Java_Neural_Network;
 
 public class HiddenLayer extends Layer{

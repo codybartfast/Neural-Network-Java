@@ -1,3 +1,8 @@
+/*
+ *  Represents a neuron in the Hidden Layer with no 
+ *  'special' features.
+ */
+
 package Java_Neural_Network;
 
 class HiddenNeuron extends Neuron

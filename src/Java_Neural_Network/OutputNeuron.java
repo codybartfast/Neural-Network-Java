@@ -1,3 +1,12 @@
+/*
+ *   Represents a Neuron in the Output Layer
+ *   
+ *   Is able to hold a target or expected value that can
+ *   be used by the back propagation process to train the
+ *   network.
+ *   
+ */ 
+
 package Java_Neural_Network;
 
 public class OutputNeuron extends Neuron{

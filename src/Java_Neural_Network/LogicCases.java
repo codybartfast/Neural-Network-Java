@@ -1,3 +1,9 @@
+/*
+ *   Sample data for testing and training neural networks
+ *   (or other systems) that represent Logic Gates.
+ */
+
+
 package Java_Neural_Network;
 
 public class LogicCases {

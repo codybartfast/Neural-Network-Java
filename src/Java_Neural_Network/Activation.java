@@ -1,3 +1,11 @@
+/*
+ *  Contains functions that are specific to a the 
+ *  Activation function being used.
+ *  
+ *  Currently only Sigmoid activation is implemented.
+ * 
+ */
+
 package Java_Neural_Network;
 
 import java.util.Random;

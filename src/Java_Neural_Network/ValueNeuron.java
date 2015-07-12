@@ -1,3 +1,10 @@
+/*
+ *   A simple Neuron that simply holds a value rather than
+ *   calculating one.  It is used in the Input layer to 
+ *   represent the provided input values.
+ *   
+ */
+
 package Java_Neural_Network;
 
 public class ValueNeuron extends Neuron {

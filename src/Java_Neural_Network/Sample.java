@@ -1,3 +1,12 @@
+/*
+ *   Contains input of a neural net and the output expected
+ *   for that input.  Can be used training or testing a 
+ *   Neural network (or other system).
+ *   
+ *   Contains function(s) to help parse sample data from
+ *   text sources.
+ */
+
 package Java_Neural_Network;
 
 public class Sample {

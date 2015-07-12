@@ -1,3 +1,23 @@
+/*
+ *   Trains a network with the provided samples (or cases).
+ *   
+ *   An 'Epoch' refers to a cycle in which each provided 
+ *   training sample used once to train the network.
+ *   
+ *   The values from each sample are input to the network, 
+ *   and the actual output calculated (feed-forward).
+ *   The expected (target) values are then back-propagated
+ *   through the network in order to train (improve) the 
+ *   the network.
+ *   
+ *   An ICheck function is provided to determine if a given
+ *   output is considered correct. 
+ *   
+ *   Optionally test case can be provided to measure the
+ *   accuracy of the network with an independent data set. 
+ *   
+ */
+
 package Java_Neural_Network;
 
 import java.util.Random;
@@ -90,7 +110,6 @@ public class Trainer {
             cases[i] = rTemp;
         }
     }
-
 	
     Tuple measureAccuracy(Sample[] samples)
     {
@@ -105,7 +124,7 @@ public class Trainer {
 
     void writeAccuracy(Tuple t, String sampleName)
     {
-        wr("%s: %.2f correct (%d/%d)",
+        wr("%s: %.2f%% correct (%d/%d)",
             sampleName, GetPercent(t.item1, t.item2), t.item1, t.item2);
     }
 

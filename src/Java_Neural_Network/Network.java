@@ -1,3 +1,20 @@
+/*
+ *   Represents a Neural Network.
+ *   
+ *   Contains the various layers that comprise the network:
+ *     - Input layer,
+ *     - 0 or more Hidden layers,
+ *     - Output layer.
+ *     
+ *   On construction the Network creates the connections
+ *   between the neurons of each layer.
+ *   
+ *   Provides a FeedForward function for evaluating input.
+ *   
+ *   Provides a PropagateBack function for training the 
+ *   network
+ */
+
 package Java_Neural_Network;
 
 public class Network {

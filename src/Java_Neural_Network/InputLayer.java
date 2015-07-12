@@ -1,3 +1,13 @@
+/*
+ *   Represents the Input layer of a neural network.  It
+ *   contains value neurons that simply 'hold' an input 
+ *   value.
+ *   
+ *   Provides a function to allow the value of the input
+ *   neurons to be set.
+ * 
+ */
+
 package Java_Neural_Network;
 
 public class InputLayer extends Layer {
